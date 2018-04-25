@@ -1,8 +1,8 @@
 {
-  "name": "vue-koa-demo",
+  "name": "seed-middleware",
   "version": "1.0.0",
   "description": "A Vue.js & Koa project",
-  "author": "Molunerfinn <marksz@teamsz.xyz>",
+  "author": "Donny <1021001390@qq.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",

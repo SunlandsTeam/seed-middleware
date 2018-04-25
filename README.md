@@ -1,6 +1,6 @@
-# vue-koa-demo
+# seed-middleware
 
-A fullstack demo used Vue2 & Koa2(Koa1 version is [here](https://github.com/Molunerfinn/vue-koa-demo/tree/koa1))
+A fullstack demo used Vue2 & Koa2(Koa1 version is [here](https://github.com/SunlandsTeam/seed-middleware/tree/koa1))
 
 :sunny: Easy to setup and learn
 
@@ -8,7 +8,7 @@ A fullstack demo used Vue2 & Koa2(Koa1 version is [here](https://github.com/Molu
 
 :rocket: Instant feedback 
 
-:stuck_out_tongue_winking_eye: Vue SSR support in the [ssr](https://github.com/Molunerfinn/vue-koa-demo/tree/ssr) branch
+:stuck_out_tongue_winking_eye: Vue SSR support in the [ssr](https://github.com/SunlandsTeam/seed-middleware/tree/ssr) branch
 
 :tada: Docker support
 
@@ -32,7 +32,7 @@ If you want to check the info of the test, view the [article](https://molunerfin
 
 ## Install
 
-`git clone https://github.com/Molunerfinn/vue-koa-demo.git`
+`git clone https://github.com/SunlandsTeam/seed-middleware.git`
 
 `npm install` or `yarn`
 
@@ -101,7 +101,4 @@ open browser: `localhost:8889`
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
-
-Copyright (c) 2017 Molunerfinn
-
 
