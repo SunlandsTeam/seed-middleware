@@ -2,6 +2,7 @@ import '../../env'
 import Sequelize from 'sequelize'
 
 const Todolist = new Sequelize(`mysql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_URL || 'localhost'}/todolist`, {
+  operatorsAliases: false,
   define: {
     timestamps: false // 取消Sequelzie自动给数据表加入时间戳（createdAt以及updatedAt）
   }
