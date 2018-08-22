@@ -62,7 +62,7 @@ export default {
 
 <style lang="stylus" scoped>
   .el-row.content
-    padding 16px
+    padding-top: 200px
   .title
     font-size 28px
   .el-input
