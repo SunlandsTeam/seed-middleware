@@ -27,7 +27,7 @@ app.use(async function (ctx, next) {
   console.log('%s %s - %s', ctx.method, ctx.url, ms)
 })
 
-app.use(async function (ctx, next) {  //  如果JWT验证失败，返回验证失败信息
+app.use(async function (ctx, next) { //  如果JWT验证失败，返回验证失败信息
   try {
     await next()
   } catch (err) {
