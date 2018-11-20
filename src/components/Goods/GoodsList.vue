@@ -15,7 +15,16 @@
           {{dateFormat(scope.row.updated_at)}}
         </template>
       </el-table-column>
+      <el-table-column fixed="right" label="操作" align="center">
+        <template slot-scope="scope">
+          <el-button @click="onPreview(scope.row)" type="text" size="small">查看</el-button>
+          <el-button @click="onDelete(scope.row)" type="text" size="small">删除</el-button>
+        </template>
+      </el-table-column>
     </el-table>
+    <el-row>
+      <el-pagination layout="total, prev, pager, next, jumper" :current-page="currentPage" :page-size="pageSize" :total="total" @current-change="onCurrentChange" />
+    </el-row>
   </div>
 </template>
 
@@ -27,20 +36,43 @@ export default {
   data () {
     return {
       size: 'small',
-      goodsList: []
+      goodsList: [],
+      currentPage: 1,
+      pageSize: 10,
+      total: 0
     }
   },
   mounted () {
-    this.$http.get('/api/goods').then(res => {
-      if (res.data.success) {
-        this.goodsList = res.data.result
-      }
-    })
+    this.onQuery()
   },
   methods: {
     dateFormat (datetime) {
       return moment(datetime).format('YYYY/MM/DD HH:mm:ss')
-    }
+    },
+    onQuery (payload) {
+      this.$http.get('/api/goods').then(res => {
+        if (res.data.success) {
+          this.goodsList = res.data.result
+          this.currentPage = res.data.page
+          this.total = res.data.total
+        }
+      })
+    },
+    onPreview (row) {
+      console.log(row.id)
+    },
+    onDelete (row) {
+      this.$http.delete(`/api/goods/${row.id}`).then(res => {
+        if (res.data.success) {
+          this.onQuery()
+          this.$message({
+            message: '删除成功',
+            type: 'success'
+          })
+        }
+      })
+    },
+    onCurrentChange () {}
   }
 }
 </script>

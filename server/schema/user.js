@@ -15,6 +15,15 @@ export default function (sequelize, DataTypes) {
     password: {
       type: DataTypes.CHAR(128),
       allowNull: false
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
+      allowNull: false
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      defaultValue: null
     }
   }, {
     tableName: 'user'

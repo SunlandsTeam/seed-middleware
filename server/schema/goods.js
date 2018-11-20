@@ -29,8 +29,7 @@ export default (sequelize, DataTypes) => {
     },
     updated_at: {
       type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW,
-      allowNull: false
+      defaultValue: null
     }
   }, {
     tableName: 'goods'

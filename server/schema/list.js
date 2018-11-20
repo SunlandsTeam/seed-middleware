@@ -19,6 +19,15 @@ export default function (sequelize, DataTypes) {
     status: {
       type: DataTypes.INTEGER(1),
       allowNull: false
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
+      allowNull: false
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      defaultValue: null
     }
   }, {
     tableName: 'list'

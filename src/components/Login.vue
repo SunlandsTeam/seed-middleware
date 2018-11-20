@@ -37,7 +37,7 @@ export default {
         password: this.password
       }
       const result = this.$http.post('/auth/user', obj) // 将信息发送给后端
-      result.then((res) => {
+      result.then(res => {
         if (res.data.success) { // 如果成功
           sessionStorage.setItem('demo-token', res.data.token) // 用sessionStorage把token存下来
           this.$message({ // 登录成功，显示提示语
@@ -49,7 +49,7 @@ export default {
           this.$message.error(res.data.info) // 登录失败，显示提示语
           sessionStorage.setItem('demo-token', null) // 将token清空
         }
-      }, (err) => {
+      }, err => {
         console.log(err)
         this.$message.error('请求错误！')
         sessionStorage.setItem('demo-token', null) // 将token清空
